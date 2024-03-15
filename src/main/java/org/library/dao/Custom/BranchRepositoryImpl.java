@@ -23,8 +23,8 @@ public class BranchRepositoryImpl implements BranchRepository {
 
     @Override
     public int saved(Branch data) {
-         int value = (int) session.save(data);
-            return value;
+        int value = (int) session.save(data);
+        return value;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class BranchRepositoryImpl implements BranchRepository {
     @Override
     public long Count() {
         String sql = "select count(*) from Branch";
-        Query query = session.createQuery(sql);
+        org.hibernate.Query query = session.createQuery(sql);
         return (long) query.uniqueResult();
     }
 

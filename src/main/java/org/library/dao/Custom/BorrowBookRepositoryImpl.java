@@ -1,8 +1,12 @@
 package org.library.dao.Custom;
 
+import org.library.bo.Custom.MemberServiceImpl;
 import org.library.dao.BorrowBookRepository;
 import org.library.entity.BorrowBook;
 import org.hibernate.Session;
+import org.library.entity.Member;
+import org.hibernate.query.Query;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +15,9 @@ public class BorrowBookRepositoryImpl implements BorrowBookRepository {
     private Session session;
     @Override
     public BorrowBook getData(String Id) {
-        return null;
+        Query query = session.createQuery("from BorrowBook where id = :id");
+        query.setParameter("id", 9);
+        return (BorrowBook) query.uniqueResult();
     }
 
     @Override
@@ -26,12 +32,15 @@ public class BorrowBookRepositoryImpl implements BorrowBookRepository {
 
     @Override
     public ArrayList<BorrowBook> getAll() {
-        return null;
+        String sql = "SELECT B FROM BorrowBook As B where B.member = :Member";
+        Query query = session.createQuery(sql);
+        query.setParameter("Member", MemberServiceImpl.member);
+        return (ArrayList<BorrowBook>) query.getResultList();
     }
 
     @Override
     public void Update(BorrowBook Data) {
-
+        session.update(Data);
     }
 
     @Override
@@ -41,11 +50,31 @@ public class BorrowBookRepositoryImpl implements BorrowBookRepository {
 
     @Override
     public long Count() {
-        return 0;
+        String sql = "SELECT SUM(B.payment) FROM BorrowBook AS B";
+        Query query = session.createQuery(sql);
+        Double sum = (Double) query.getSingleResult();
+        return sum != null ? sum.longValue() : 0; // Return 0 if sum is null
     }
 
     @Override
     public void SetSession(Session session) {
         this.session = session;
+    }
+
+    @Override
+    public BorrowBook getData(Member Id) {
+        String sql = "SELECT B FROM BorrowBook As B where B.member = :id and B.status = :status";
+        Query query = session.createQuery(sql);
+        query.setParameter("id", Id);
+        query.setParameter("status", "Pending");
+        return (BorrowBook) query.uniqueResult();
+    }
+
+    @Override
+    public int BookCount(Member data) {
+        String sql = "SELECT COUNT(B) FROM BorrowBook As B where B.member = :Member";
+        Query query = session.createQuery(sql);
+        query.setParameter("Member", data);
+        return ((Long) query.uniqueResult()).intValue();
     }
 }

@@ -78,5 +78,4 @@ public class ForgetMailServiceImpl implements ForgetMailService {
         }
     }
 
-
 }

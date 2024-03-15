@@ -3,6 +3,8 @@ package org.library.dao.Custom;
 import org.library.dao.BookTransactionRepository;
 import org.library.entity.Book_Transaction;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +22,13 @@ public class BookTransactionRepositoryImpl implements BookTransactionRepository 
     }
 
     @Override
-    public int saved(Book_Transaction data) {
-        return (int) session.save(data);
+    public int saved(Book_Transaction transaction) {
+        System.out.println(transaction.getTransaction().getId());
+        System.out.println(transaction.getBook().getId());
+        int save = (int) session.save(transaction);
+        return save;
     }
+
 
     @Override
     public ArrayList<Book_Transaction> getAll() {
@@ -49,4 +55,11 @@ public class BookTransactionRepositoryImpl implements BookTransactionRepository 
         this.session = session;
     }
 
+    @Override
+    public List<Book_Transaction> bookTransactionData(String id) {
+        String sql = "SELECT B FROM Book_Transaction AS B WHERE B.id =: id";
+        Query query = session.createQuery(sql);
+        query.setParameter("id",id);
+        return query.list();
+    }
 }

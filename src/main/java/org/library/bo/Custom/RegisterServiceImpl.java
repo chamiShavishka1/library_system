@@ -23,9 +23,11 @@ public class RegisterServiceImpl implements RegisterService {
         transaction = session.beginTransaction();
         if (saved > 0) {
             transaction.commit();
+            session.close();
         }
         else {
             transaction.rollback();
+            session.close();
         }
         return saved;
     }

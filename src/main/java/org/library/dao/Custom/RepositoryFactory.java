@@ -27,8 +27,8 @@ public class RepositoryFactory {
                 return new BranchRepositoryImpl();
             case Book_Transaction:
                 return new BookTransactionRepositoryImpl();
-                case BorrowBook:
-                    return new BorrowBookRepositoryImpl();
+            case BorrowBook:
+                return new BorrowBookRepositoryImpl();
             default:
                 return null;
         }

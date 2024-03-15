@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import org.library.bo.AdminService;
 import org.library.bo.MemberService;
 import org.library.bo.ServiceFactor;
+import org.library.controller.ForgetPassWord.ForgetPassWordFormController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,18 +38,20 @@ public class LoginPageController  implements Initializable {
     MemberService memberService = (MemberService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Member);
     AdminService adminBo = (AdminService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Admin);
 
+
+
     @FXML
     void LoginOnActhion(ActionEvent event) {
         if (MemberCheckBox.isSelected()){
+            ForgetPassWordFormController.user = "Member";
             Member_login();
         } else if (AdminCheckBox.isSelected()) {
+            ForgetPassWordFormController.user = "Admin";
             Admin_Login();
         }
         else {
             new Alert(Alert.AlertType.INFORMATION,"Please select Member or Admin").show();
         }
-
-
     }
 
     @FXML

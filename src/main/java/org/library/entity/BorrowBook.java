@@ -44,15 +44,6 @@ public class BorrowBook{
     @Column(name = "Payment")
     private double payment;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "transaction")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "transaction")
     private List<Book_Transaction> details = new ArrayList<>();
-
-    public BorrowBook(int qty, LocalDate dueDate, String status, Member member,double payment) {
-        this.qty = qty;
-        this.dueDate = Date.valueOf(dueDate);
-        this.status = status;
-        this.member = member;
-        this.payment=payment;
-    }
-
 }

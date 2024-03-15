@@ -11,6 +11,7 @@ import org.library.bo.MemberDashboardServer;
 import org.library.bo.ServiceFactor;
 import org.library.dto.MemberDto;
 import org.library.util.Validation;
+import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +25,7 @@ public class DashBoardPageFormController implements Initializable {
 
     @FXML
     private TextField PasswordTextFild;
+    public Text bookCount;
 
     @FXML
     private Button viewPass;
@@ -51,10 +53,10 @@ public class DashBoardPageFormController implements Initializable {
         }
     }
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PasswordTextFild.setVisible(false);
         SetData();
+        getBookCount();
     }
 
     int Id = 0;
@@ -96,5 +98,10 @@ public class DashBoardPageFormController implements Initializable {
         else {
             new Alert(Alert.AlertType.INFORMATION,"Please Enter Valid Data").show();
         }
+    }
+
+    void getBookCount(){
+        int count = memberDashboardServer.BookCount(LoginPageController.memberUsername);
+        bookCount.setTextContent(String.valueOf(count));
     }
 }

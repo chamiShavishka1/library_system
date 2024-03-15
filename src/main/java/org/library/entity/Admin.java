@@ -38,16 +38,6 @@ public class Admin {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "admin")
     private List<Books> books = new ArrayList<>();
 
-    public AdminDto toDto() {
-        return new AdminDto(
-                this.Id,
-                this.Name,
-                this.Username,
-                this.Password,
-                this.Email
-        );
-
-    }
 
     public Admin(int Id , String Name , String Username , String Password , String Email){
         this.Id = Id;

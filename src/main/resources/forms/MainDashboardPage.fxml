@@ -10,9 +10,9 @@
 <AnchorPane prefHeight="596.0" prefWidth="915.0" styleClass="background" stylesheets="@../img/Styles/DashBoardPage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.library.controller.MainDashboardPageFormController">
    <children>
       <ImageView fitHeight="557.0" fitWidth="106.0" layoutX="15.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/Rectangle%201.png" />
-         </image>
+<!--         <image>-->
+<!--            <Image url="@../img/Rectangle%201.png" />-->
+<!--         </image>-->
       </ImageView>
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="38.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
          <image>

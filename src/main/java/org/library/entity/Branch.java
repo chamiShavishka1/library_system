@@ -32,13 +32,4 @@ public class Branch {
     @ManyToOne
     @JoinColumn(name = "admin_id")
     private Admin admin;
-
-    public BranchDto toDto() {
-        return new BranchDto(
-                this.Id,
-                this.Name,
-                this.Location,
-                this.Email
-        );
-    }
 }

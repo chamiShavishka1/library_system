@@ -43,17 +43,6 @@ public class Books {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "book")
     private List<Book_Transaction> details = new ArrayList<>();
 
-    public BookDto toDto() {
-        return new BookDto(
-                this.id,
-                this.title,
-                this.autor,
-                this.dis,
-                this.genre,
-                this.available
-        );
-    }
-
     public Books(int id, String title, String autor, String dis, String genre, String available, Admin admin) {
         this.id = id;
         this.title = title;

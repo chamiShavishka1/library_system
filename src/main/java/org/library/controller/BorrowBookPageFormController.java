@@ -47,6 +47,7 @@ public class BorrowBookPageFormController {
     public static BorrowBookPageFormController borrowBookPageFormController;
 
     public BorrowBookPageFormController(){
+
         borrowBookPageFormController = this;
     }
 
@@ -88,7 +89,7 @@ public class BorrowBookPageFormController {
     public void LoadTable(){
         vBox.getChildren().clear();
         for (int i = 0; i < borrowRows.size(); i++) {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/forms/tableRow/BorrowBook.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Forms/Table_Row/BorrowBook.fxml"));
             try {
                 Parent laodNode = fxmlLoader.load();
                 BorrowBookRowController borrowBookRowController = fxmlLoader.getController();
@@ -123,5 +124,6 @@ public class BorrowBookPageFormController {
             alert.showAndWait();
         }
     }
+
 
 }

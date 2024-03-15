@@ -77,7 +77,7 @@ public class ReturnBookServiceImpl implements ReturnBookServiceI {
 
         session = SessionFactoryConfiguration.getInstance().getSession();
         borrowBookRepository.SetSession(session);
-        BorrowBook data = borrowBookRepository.getData(String.valueOf(data1));
+        BorrowBook data = borrowBookRepository.getData(data1);
         session.close();
 
 //        List<Book_Transaction> details = data.getDetails();
