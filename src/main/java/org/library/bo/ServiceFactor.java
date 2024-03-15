@@ -14,7 +14,7 @@ public class ServiceFactor {
     }
 
     public enum BoType{
-        Member,Admin,Search_Book,Register,Manage_Book,UserMange,Branch,DashBoard,MemberDashBoard,Admin_Register, Return_Book, Borrow_Book
+        Member,Admin,Search_Book,Register,Manage_Book,UserMange,Branch,DashBoard,MemberDashBoard,Admin_Register, Return_Book, forgetPassword, Borrow_Book
     }
 
     public SuperService getBo(BoType boType){

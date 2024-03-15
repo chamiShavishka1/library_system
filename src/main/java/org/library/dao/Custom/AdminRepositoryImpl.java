@@ -73,4 +73,12 @@ public class AdminRepositoryImpl implements AdminRepository {
     public void SetSession(Session session) {
         this.session = session;
     }
+
+    @Override
+    public Admin CheckEmail(String email) {
+        String hql = "FROM Admin WHERE Email = :email";
+        Query<Admin> query = session.createQuery(hql, Admin.class);
+        query.setParameter("email", email);
+        return query.uniqueResult();
+    }
 }

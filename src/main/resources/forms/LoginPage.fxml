@@ -36,7 +36,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></CheckBox>
-      <Text fill="WHITE" layoutX="744.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="forget" text="Foget Password">
+      <Text fill="WHITE" layoutX="744.0" layoutY="551.0" onMouseClicked="#forgetPasswordOnActhion" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="forget" text="Foget Password">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Text>
