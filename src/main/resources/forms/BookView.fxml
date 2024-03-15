@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="596.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.library.controller.BookViewFormController">
+   <children>
+      <ImageView fitHeight="596.0" fitWidth="915.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Untitled%20(13).png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="searchBar" layoutX="42.0" layoutY="112.0" onAction="#searchOnActhion" prefHeight="41.0" prefWidth="195.0" promptText="Search Here" styleClass="search" stylesheets="@../img/Styles/ViewBookPage.css" />
+      <TextField fx:id="titleText" layoutX="42.0" layoutY="212.0" prefHeight="40.0" prefWidth="250.0" />
+      <TextField fx:id="genreText" layoutX="42.0" layoutY="385.0" prefHeight="40.0" prefWidth="250.0" />
+      <TextField fx:id="AutorText" layoutX="42.0" layoutY="297.0" prefHeight="40.0" prefWidth="250.0" />
+      <TextArea fx:id="DisText" layoutX="333.0" layoutY="192.0" prefHeight="177.0" prefWidth="386.0" />
+      <Label fx:id="lable1" layoutX="551.0" layoutY="428.0" styleClass="label1" textFill="#830000" />
+      <Text layoutX="46.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tittle">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="46.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="46.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="lable" layoutX="488.0" layoutY="454.0" stylesheets="@../img/Styles/ViewBookPage.css">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <styleClass>
+            <String fx:value="label1" />
+            <String fx:value="lableText" />
+         </styleClass>
+      </Label>
+      <Text fx:id="lableText" layoutX="578.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="59.4700927734375">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

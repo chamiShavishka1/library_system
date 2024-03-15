@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="596.0" prefWidth="915.0" styleClass="background" stylesheets="@../img/Styles/DashBoardPage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.library.controller.MainDashboardPageFormController">
+   <children>
+      <ImageView fitHeight="557.0" fitWidth="106.0" layoutX="15.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Rectangle%201.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="38.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-dashboard-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="38.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-story-book-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="36.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-return-book-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="37.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-return-book-80.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="35.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icon/icons8-log-out-48.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="38.0" layoutY="104.0" mnemonicParsing="false" onAction="#DashboardbtnOnActhion" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: blur;" />
+      <Button layoutX="35.0" layoutY="206.0" mnemonicParsing="false" onAction="#SearchBookOnActhion" prefHeight="37.0" prefWidth="60.0" style="-fx-background-color: blur;" />
+      <Button layoutX="42.0" layoutY="296.0" mnemonicParsing="false" onAction="#BookBorrowBtnOnActhion" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: blur;" />
+      <Button layoutX="41.0" layoutY="405.0" mnemonicParsing="false" onAction="#ReturnBookBtnOnActhion" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: blur;" />
+      <Button layoutX="43.0" layoutY="517.0" mnemonicParsing="false" onAction="#ExitBtnOnActhion" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: blur;" />
+      <AnchorPane fx:id="ChangePane" layoutX="134.0" layoutY="77.0" prefHeight="497.0" prefWidth="767.0" />
+      <Label layoutX="711.0" layoutY="33.0" text="&quot;BookWorm&quot;">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="647.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-library-48.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

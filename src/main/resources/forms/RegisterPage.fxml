@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../img/Styles/RegiterPage.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.library.controller.RegisterPageFormController">
+   <children>
+      <ImageView fitHeight="596.0" fitWidth="915.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/woman-3435842_1920.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="NameText" layoutX="94.0" layoutY="118.0" prefHeight="25.0" prefWidth="200.0">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </TextField>
+      <TextField fx:id="usernameText" layoutX="92.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </TextField>
+      <TextField fx:id="emailText" layoutX="89.0" layoutY="230.0" prefHeight="25.0" prefWidth="200.0">
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </TextField>
+      <Button layoutX="130.0" layoutY="468.0" minHeight="40.0" minWidth="112.0" mnemonicParsing="false" onAction="#RegisterbtnOnActhion" prefHeight="40.0" prefWidth="112.0" text="Register" />
+      <Text layoutX="718.0" layoutY="540.0" onMouseClicked="#loginBtnOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Now">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Text>
+      <PasswordField fx:id="PasswordFild" layoutX="87.0" layoutY="287.0" prefHeight="25.0" prefWidth="200.0" />
+      <PasswordField fx:id="PasswordConfirm" layoutX="87.0" layoutY="350.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="PasswordTextFild" layoutX="89.0" layoutY="287.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="PasswordConfirmText" layoutX="84.0" layoutY="350.0" prefHeight="25.0" prefWidth="200.0" />
+      <Button fx:id="viewPass" layoutX="256.0" layoutY="287.0" mnemonicParsing="false" onAction="#viewPassOnActhion" prefWidth="25.0" styleClass="eye" stylesheets="@../img/Styles/LoginPage.css" />
+      <Button fx:id="viewConfirmPass" layoutX="260.0" layoutY="350.0" mnemonicParsing="false" onAction="#viewConfirmPassOnActhion" prefWidth="25.0" styleClass="eye" stylesheets="@../img/Styles/LoginPage.css" />
+      <Label layoutX="40.0" layoutY="95.0" text="Full Name" textFill="#4531e0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="154.0" text="User Name" textFill="#4531e0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="211.0" text="Email" textFill="#4531e0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="39.0" layoutY="268.0" text="Password" textFill="#4531e0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="331.0" text="Confirm Password" textFill="#4531e0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="651.0" layoutY="54.0" text="&quot;BookWorm&quot;">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
