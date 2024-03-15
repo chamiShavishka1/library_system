@@ -3,6 +3,7 @@ package org.library.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -34,7 +35,7 @@ public class BookViewFormController implements Initializable {
     private Label lable;
 
     @FXML
-    private Text lableText;
+    private Button lableText;
 
     @FXML
     private TextField searchBar;

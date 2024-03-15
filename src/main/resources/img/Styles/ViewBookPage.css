@@ -21,7 +21,7 @@
 }
 
 .text-field1{
-    -fx-min-width: 495.004px;
+    /*-fx-min-width: 495.004px;*/
     -fx-min-height: 52px;
     -fx-text-fill: #000;
     -fx-font-size: 18px;
@@ -56,7 +56,7 @@
 .lableText{
     -fx-font-size: 25px;
     -fx-font-family: Inter;
-    -fx-font-weight: 600;
+    /*-fx-font-weight: 600;*/
     -fx-fill: #FFF;
     -fx-alignment: center;
 }

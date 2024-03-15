@@ -20,57 +20,30 @@ import java.util.ResourceBundle;
 
 public class LoginPageController  implements Initializable {
 
-    public CheckBox AdminCheckBox;
-
-    public CheckBox MemberCheckBox;
-
     public PasswordField PasswordFild;
     public TextField PasswordTextFild;
-
-    public TextField Username;
     public Button viewPass;
-
-    public void initialize(URL url, ResourceBundle resourceBundle ) {
-        PasswordTextFild.setVisible( false );
-    }
+    public TextField Username;
+    public CheckBox MemberCheckBox;
+    public CheckBox AdminCheckBox;
 
     Boolean flag = false;
+
+    public static Stage stage ;
+
     MemberService memberService = (MemberService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Member);
     AdminService adminBo = (AdminService) ServiceFactor.getBoFactory().getBo(ServiceFactor.BoType.Admin);
 
-
-
-    @FXML
-    void LoginOnActhion(ActionEvent event) {
-        if (MemberCheckBox.isSelected()){
-            ForgetPassWordFormController.user = "Member";
-            Member_login();
-        } else if (AdminCheckBox.isSelected()) {
-            ForgetPassWordFormController.user = "Admin";
-            Admin_Login();
-        }
-        else {
-            new Alert(Alert.AlertType.INFORMATION,"Please select Member or Admin").show();
-        }
-    }
-
-    @FXML
-    void RegisterHerebtnOnActhion(MouseEvent event) {
-        try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/forms/RegisterPage.fxml"));
-            Stage stage = (Stage) PasswordFild.getScene().getWindow();
-            stage.setScene(new Scene(parent));
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+    @Override
+    public void initialize( URL url, ResourceBundle resourceBundle ) {
+        PasswordTextFild.setVisible( false );
     }
 
     @FXML
     void viewPassOnActhion(ActionEvent event) {
+
         String Password = PasswordFild.getText();
-        String TExtPass = PasswordFild.getText();
+        String TExtPass = PasswordTextFild.getText();
 
         if ( flag == false ){
             PasswordFild.setVisible(false);
@@ -86,6 +59,29 @@ public class LoginPageController  implements Initializable {
         }
     }
 
+    public void LoginOnActhion(ActionEvent actionEvent) {
+        if (MemberCheckBox.isSelected()){
+            ForgetPassWordFormController.user = "Member";
+            Member_login();
+        } else if (AdminCheckBox.isSelected()) {
+            ForgetPassWordFormController.user = "Admin";
+            Admin_Login();
+        }
+        else {
+            new Alert(Alert.AlertType.INFORMATION,"Please select Member or Admin").show();
+        }
+    }
+
+    public void RegisterHerebtnOnActhion(MouseEvent mouseEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/Forms/RegisterPage.fxml"));
+            Stage stage = (Stage) PasswordFild.getScene().getWindow();
+            stage.setScene(new Scene(parent));
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public static String memberUsername = "";
 
@@ -108,7 +104,6 @@ public class LoginPageController  implements Initializable {
             new Alert(Alert.AlertType.INFORMATION,"Worng Data has been input").show();
         }
     }
-
 
     public static String Admin_Username = "";
 
@@ -142,11 +137,11 @@ public class LoginPageController  implements Initializable {
         }
     }
 
+    public void memberOnActhion(ActionEvent actionEvent) {
+        ForgetPassWordFormController.user = "Member";
+    }
 
-
-
-
-
-
-
+    public void AdminOnActhion(ActionEvent actionEvent) {
+        ForgetPassWordFormController.user = "Admin";
+    }
 }

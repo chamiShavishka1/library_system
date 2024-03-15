@@ -11,7 +11,8 @@ import org.library.bo.MemberDashboardServer;
 import org.library.bo.ServiceFactor;
 import org.library.dto.MemberDto;
 import org.library.util.Validation;
-import org.w3c.dom.Text;
+
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -102,6 +103,6 @@ public class DashBoardPageFormController implements Initializable {
 
     void getBookCount(){
         int count = memberDashboardServer.BookCount(LoginPageController.memberUsername);
-        bookCount.setTextContent(String.valueOf(count));
+        bookCount.setText(String.valueOf(count));
     }
 }
